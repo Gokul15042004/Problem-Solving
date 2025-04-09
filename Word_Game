@@ -1,0 +1,30 @@
+import java.util.Scanner;
+class Word_game{
+	public static void word_game(){
+	Scanner sc=new Scanner(System.in);
+	StringBuilder sb=new StringBuilder();
+	while(true){
+	String sg=sc.next();
+	if(sg.charAt(0)=='#')
+	break;
+	else
+	sb.append(sc).append(" ");
+	}
+	String a[]=sb.toString().split(" ");
+	for(int i=0;i<a.length;i++){
+	if(i==0){
+	   System.out.print(a[i]);
+	   } 
+	    else if(a[i-1].charAt(a[i-1].length()-1)==a[i].charAt(0)){
+	      System.out.print(" "+a[i]);
+	  }
+ 	    else{
+	        break;
+	    }
+         }
+       }
+	public static void main(String[] args){
+	Word_game wg=new Word_game();
+	wg.word_game();
+	}
+     }
