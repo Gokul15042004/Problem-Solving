@@ -1,0 +1,49 @@
+import java.util.*;
+class Chess_Board{
+ 
+        public void chess_game(){
+	Scanner sc=new Scanner(System.in);
+	int n=sc.nextInt();
+	char c[][]=new char[n][n];
+	int bx=sc.nextInt()-1;
+	int by=sc.nextInt()-1;
+	int qx=sc.nextInt()-1;
+	int qy=sc.nextInt()-1;
+	for(int i=0;i<n;i++){
+	for(int j=0;j<n;j++) c[i][j]='.';
+		}
+	c[bx][by]='B'; c[qx][qy]='Q';
+		
+	int Bisup=bx-1,Bisdown=bx+1,Bisleft=by-1,Bisright=by+1;
+	while(Bisup>=0 || Bisdown<n || Bisleft>=0 ||Bisright<n){
+	if(Bisup>=0 && Bisleft>=0) c[Bisup][Bisleft]='*';
+	if(Bisup>=0 && Bisright<n) c[Bisup][Bisright]='*';
+	if(Bisdown<n && Bisleft>=0) c[Bisdown][Bisleft]='*';
+	if(Bisdown<n && Bisright<n) c[Bisdown][Bisright]='*';
+	Bisup--;Bisdown++;Bisleft--;Bisright++;
+		}
+		
+	int Qup=qx-1,Qdown=qx+1,Qleft=qy-1,Qright=qy+1;
+	for(int i=qx-1;i>=0;i--) c[i][qy] = ((c[i][qy]=='*')?'%':'&');
+	for(int i=qx+1;i<n;i++) c[i][qy] = ((c[i][qy]=='*')?'%':'&');
+	for(int i=qy-1;i>=0;i--) c[qx][i] = ((c[qx][i]=='*')?'%':'&');
+	for(int i=qy+1;i<n;i++) c[qx][i] = ((c[qx][i]=='*')?'%':'&');
+		
+	while(Qup>=0 || Qdown<n || Qleft>=0 || Qright<n){
+	if(Qup>=0 && Qleft>=0) c[Qup][Qleft]=((c[Qup][Qleft]=='*')?'%':'&');
+	if(Qup>=0 && Qright<n) c[Qup][Qright]=((c[Qup][Qright]=='*')?'%':'&');
+	if(Qdown<n && Qleft>=0) c[Qdown][Qleft]=((c[Qdown][Qleft]=='*')?'%':'&');
+	if(Qdown<n && Qright<n) c[Qdown][Qright]=((c[Qdown][Qright]=='*')?'%':'&');
+	Qup--;Qdown++;Qleft--;Qright++;
+		}
+        c[bx][by]='B'; c[qx][qy]='Q';
+	for(int i=0;i<n;i++){
+	for(int j=0;j<n;j++) System.out.print(c[i][j]);
+	System.out.println();
+		}
+	    }
+	public static void main(String[] args){
+	Chess_Board cb=new Chess_Board();
+	cb.chess_game();
+	}
+     }
