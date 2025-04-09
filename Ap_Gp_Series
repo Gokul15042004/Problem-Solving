@@ -1,0 +1,27 @@
+import java.util.*;
+class Ap_Gpseries{
+	public static void ap_gp_series(){
+	Scanner sc=new Scanner(System.in);
+	String sg=sc.nextLine();
+	String sga[]=sg.split(",");
+	if(sga.length<3){
+	   System.out.println("Invalid inputs.");
+	  } else{
+	   int a[]=new int[sga.length];
+	   for(int i=0;i<a.length;i++){
+	   a[i]=Integer.parseInt(sga[i]);
+	   if((a[1]-a[0]==a[2]-a[1])){
+	   System.out.println((a[a.length-1])+a[1]-a[0]);
+	   if((a[1]/a[0])==(a[2]/a[1])){
+	    System.out.println((a[a.length-1])*(a[1]/a[0]));
+             }
+	   }
+         }
+      }
+    }
+	public static void main(String[] args){
+	Ap_Gpseries agp=new Ap_Gpseries();
+	agp.ap_gp_series();
+	 }
+      }
+	
