@@ -1,0 +1,37 @@
+import java.util.*;
+class Happycoding{
+        static void happycoding(){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m1=sc.nextInt();
+        int m2=sc.nextInt();
+        int a=0;
+	int b=0;
+	int c=0;
+        for(int i=1;i<=n;i++){
+            if(i%m1==0&&i%m2==0){
+                System.out.print("HappyCoding ");
+                c++;
+            }
+            else if(i%m1==0){
+                System.out.print("Happy ");
+                a++;
+            }
+            else if(i%m2==0){
+                System.out.print("Coding ");
+                b++;
+            }
+            else{
+                System.out.print(i+" ");
+            }
+        }
+        System.out.println();
+        System.out.println("Happy - "+a);
+        System.out.println("Coding - "+b);
+        System.out.println("HappyCoding - "+c);
+    }
+	public static void main(String[] args){
+	Happycoding hc=new Happycoding();
+	hc.happycoding();
+	}
+     }
